@@ -1,0 +1,103 @@
+[gd_scene load_steps=21 format=3 uid="uid://bibnawfhr7fix"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_fmycn"]
+[ext_resource type="PackedScene" uid="uid://u6hgkwx6kfqr" path="res://scenes/player.tscn" id="2_drkp4"]
+[ext_resource type="Texture2D" uid="uid://d138vv2p50pbi" path="res://assets/bubble_appear/bbcontorno-0001.png" id="3_jay1e"]
+[ext_resource type="Script" path="res://scripts/outer_bubble.gd" id="3_qi6na"]
+[ext_resource type="Texture2D" uid="uid://lsqlmqkwr0v4" path="res://assets/bubble_appear/bbcontorno-0002.png" id="4_v4qt8"]
+[ext_resource type="Texture2D" uid="uid://c77cp2aeg8kag" path="res://assets/bubble_appear/bbcontorno-0003.png" id="5_ycyyh"]
+[ext_resource type="Texture2D" uid="uid://cgbyskpp26aen" path="res://assets/bubble_appear/bbcontorno-0004.png" id="6_07ucd"]
+[ext_resource type="Texture2D" uid="uid://cvhx8rq1rnnrl" path="res://assets/bubble_appear/bbcontorno-0005.png" id="7_aekpe"]
+[ext_resource type="Texture2D" uid="uid://cmumaf4ceouhp" path="res://assets/bubble_appear/bbcontorno-0006.png" id="8_wrgm2"]
+[ext_resource type="Texture2D" uid="uid://dficicwe01oqg" path="res://assets/bubble_appear/bbcontorno-0007.png" id="9_4pycs"]
+[ext_resource type="Texture2D" uid="uid://ppr766xqxfqm" path="res://assets/bubble_appear/bbcontorno-0008.png" id="10_7tijs"]
+[ext_resource type="Texture2D" uid="uid://dil8uckevex74" path="res://assets/bubble_appear/bbcontorno-0009.png" id="11_slcnh"]
+[ext_resource type="Texture2D" uid="uid://waxfnvvw4bpm" path="res://assets/bubble_appear/bbcontorno-0010.png" id="12_tfssa"]
+[ext_resource type="Texture2D" uid="uid://eb1ts5bijqei" path="res://assets/bubble_appear/bbcontorno-0011.png" id="13_rqg3v"]
+[ext_resource type="Texture2D" uid="uid://d1ud716toqc18" path="res://assets/bubble_appear/bbcontorno-0012.png" id="14_e04wv"]
+[ext_resource type="Texture2D" uid="uid://cfcwtbgddx7yl" path="res://assets/bubble_appear/bbcontorno-0013.png" id="15_qhhfu"]
+[ext_resource type="Texture2D" uid="uid://cs48iwrrde6h8" path="res://assets/bubble_appear/bbcontorno-0014.png" id="16_7y0q7"]
+[ext_resource type="Texture2D" uid="uid://00agi3adtvob" path="res://assets/bubble_appear/bbcontorno-0015.png" id="17_5gkb1"]
+[ext_resource type="Texture2D" uid="uid://mxy8vjm0a7g2" path="res://assets/bubble_appear/bbcontorno-0016.png" id="18_i1ym2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n2lb5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jay1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v4qt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ycyyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_07ucd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aekpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wrgm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4pycs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7tijs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_slcnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tfssa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rqg3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_e04wv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qhhfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7y0q7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5gkb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i1ym2")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 24.0
+}]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_fmycn")
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="CharacterBody2D" parent="." groups=["player"] instance=ExtResource("2_drkp4")]
+position = Vector2(430, 320)
+
+[node name="outer_bubble" type="StaticBody2D" parent="." groups=["outer_bubble"]]
+position = Vector2(430, 320)
+script = ExtResource("3_qi6na")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="outer_bubble"]
+scale = Vector2(0.45, 0.45)
+sprite_frames = SubResource("SpriteFrames_n2lb5")
+animation = &"idle"
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="outer_bubble"]
+build_mode = 1
+polygon = PackedVector2Array(6, -226, 63, -215, 118, -189, 160, -156, 191, -116, 214, -62, 220, -13, 220, 34, 211, 73, 195, 105, 174, 137, 144, 165, 120, 187, 84, 205, 37, 221, -10, 225, -58, 217, -100, 199, -138, 175, -172, 145, -195, 109, -217, 64, -226, 5, -223, -46, -205, -96, -181, -135, -154, -166, -124, -190, -96, -207, -66, -218, -39, -224)
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

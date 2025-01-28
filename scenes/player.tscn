@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://u6hgkwx6kfqr"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_tdtfx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7q28"]
+radius = 6.0
+
+[sub_resource type="Curve" id="Curve_w18yo"]
+_data = [Vector2(0.0160428, 1), 0.0, -1.70776, 0, 0, Vector2(0.566845, 0.534247), 0.0, 0.0, 0, 0, Vector2(1, 0.219178), -0.72738, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_5vlda"]
+length = 15.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_tdtfx")
+
+[node name="circle_collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y7q28")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2(2, 2)
+amount = 10
+lifetime = 0.5
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 8.0
+linear_accel_min = 5.0
+linear_accel_max = 5.0
+damping_min = 30.0
+damping_max = 60.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_w18yo")
+color = Color(0.568627, 0.380392, 0.239216, 1)
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+
+[node name="ray_left" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("SeparationRayShape2D_5vlda")
+
+[node name="ray_up" type="CollisionShape2D" parent="."]
+rotation = 3.14159
+shape = SubResource("SeparationRayShape2D_5vlda")
+
+[node name="ray_down" type="CollisionShape2D" parent="."]
+shape = SubResource("SeparationRayShape2D_5vlda")
+
+[node name="ray_right" type="CollisionShape2D" parent="."]
+rotation = 4.71239
+shape = SubResource("SeparationRayShape2D_5vlda")
