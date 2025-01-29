@@ -10,3 +10,7 @@ func _ready() -> void:
 func explode():
 	_animated_sprite.play('explode')
 	_collision_polygon.disabled = true
+
+func _on_animation_finished() -> void:
+	if _animated_sprite.animation == 'explode':
+		$/root/world/fadeout.fadeout()
