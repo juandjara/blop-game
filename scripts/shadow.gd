@@ -13,5 +13,5 @@ func grow():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if is_scaling:
-		scale.x = move_toward(scale.x, target_scale, delta)
-		scale.y = move_toward(scale.y, target_scale, delta)
+		scale.x = move_toward(scale.x, target_scale, 0.2 * delta)
+		scale.y = move_toward(scale.y, target_scale, 0.2 * delta)
