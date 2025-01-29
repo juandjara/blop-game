@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bibnawfhr7fix"]
+[gd_scene load_steps=53 format=3 uid="uid://bibnawfhr7fix"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_fmycn"]
 [ext_resource type="PackedScene" uid="uid://u6hgkwx6kfqr" path="res://scenes/player.tscn" id="2_drkp4"]
@@ -43,6 +43,11 @@
 [ext_resource type="Texture2D" uid="uid://bn4311x6iu0wp" path="res://assets/bubble_explode/Burbujae-0020.png" id="25_cxstx"]
 [ext_resource type="Script" path="res://scripts/shadow.gd" id="43_4sara"]
 [ext_resource type="Script" path="res://scripts/fadeout.gd" id="43_sy4xf"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="44_sb7u0"]
+[ext_resource type="FontFile" uid="uid://y10a72uay605" path="res://assets/run.ttf" id="44_ttvk1"]
+[ext_resource type="Texture2D" uid="uid://cg21uxq85lc16" path="res://assets/menus/restart_pausa.png" id="45_7futn"]
+[ext_resource type="Texture2D" uid="uid://d0pbb5tefynvo" path="res://assets/menus/continue_pausa.png" id="46_i2tpe"]
+[ext_resource type="Texture2D" uid="uid://3oi4i1uqxau5" path="res://assets/menus/quit_pausa.png" id="47_g56ru"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n2lb5"]
 animations = [{
@@ -203,6 +208,7 @@ _data = {
 }
 
 [node name="world" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_fmycn")
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -261,7 +267,67 @@ libraries = {
 "": SubResource("AnimationLibrary_1825t")
 }
 
+[node name="pause_menu" type="Control" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 859.0
+offset_bottom = 641.0
+script = ExtResource("44_sb7u0")
+
+[node name="ColorRect" type="ColorRect" parent="pause_menu"]
+layout_mode = 0
+offset_right = 859.0
+offset_bottom = 645.0
+color = Color(0, 0, 0, 0.498039)
+
+[node name="Label" type="Label" parent="pause_menu"]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 101.0
+offset_right = 498.0
+offset_bottom = 153.0
+theme_override_fonts/font = ExtResource("44_ttvk1")
+theme_override_font_sizes/font_size = 52
+text = "pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="restart" type="TextureButton" parent="pause_menu"]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 343.0
+offset_right = 506.0
+offset_bottom = 404.0
+texture_normal = ExtResource("45_7futn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="continue" type="TextureButton" parent="pause_menu"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 238.0
+offset_right = 517.0
+offset_bottom = 299.0
+texture_normal = ExtResource("46_i2tpe")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="quit" type="TextureButton" parent="pause_menu"]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 450.0
+offset_right = 479.0
+offset_bottom = 511.0
+texture_normal = ExtResource("47_g56ru")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="timeout" from="blob_timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="outer_bubble/AnimatedSprite2D" to="outer_bubble" method="_on_animation_finished"]
 [connection signal="timeout" from="enemy_timer" to="." method="_on_enemy_timer_timeout"]
 [connection signal="animation_finished" from="fadeout/AnimationPlayer" to="fadeout" method="_on_animation_finished"]
+[connection signal="pressed" from="pause_menu/restart" to="pause_menu" method="_on_restart_pressed"]
+[connection signal="pressed" from="pause_menu/continue" to="pause_menu" method="_on_continue_pressed"]
+[connection signal="pressed" from="pause_menu/quit" to="pause_menu" method="_on_quit_pressed"]

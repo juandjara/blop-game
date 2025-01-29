@@ -8,6 +8,12 @@ var current_blops = 1
 @export var blops_needed = 10
 @export var max_spawn_distance: float = 320
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		var menu: Control = $/root/world/pause_menu
+		menu.visible = true
+		get_tree().call_deferred("set_pause", true)
+
 func add_blop():
 	current_blops += 1
 	if current_blops >= blops_needed:
