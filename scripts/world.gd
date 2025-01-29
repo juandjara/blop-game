@@ -2,6 +2,7 @@ extends Node2D
 
 var small_bubble_scene = preload("res://scenes/small_bubble.tscn")
 var blop_scene = preload("res://scenes/small_blop.tscn")
+var win_music = preload("res://assets/sounds/music/win.wav")
 
 var win_condition = false
 var current_blops = 1
@@ -16,8 +17,12 @@ func _process(delta: float) -> void:
 
 func add_blop():
 	current_blops += 1
+	if current_blops == blops_needed:
+		$AudioStreamPlayer.stream = win_music
+		$AudioStreamPlayer.play()		
 	if current_blops >= blops_needed:
 		win_condition = true
+
 
 func reset_blops():
 	if current_blops <= 1:
