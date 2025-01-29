@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://bibnawfhr7fix"]
+[gd_scene load_steps=88 format=3 uid="uid://bibnawfhr7fix"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_fmycn"]
 [ext_resource type="PackedScene" uid="uid://u6hgkwx6kfqr" path="res://scenes/player.tscn" id="2_drkp4"]
@@ -77,6 +77,7 @@
 [ext_resource type="AudioStream" uid="uid://bj0n78a73rxbl" path="res://assets/sounds/sfx/prrr2.wav" id="70_k6nq2"]
 [ext_resource type="AudioStream" uid="uid://b34yaen51en58" path="res://assets/sounds/sfx/prrr1.wav" id="71_57ewi"]
 [ext_resource type="AudioStream" uid="uid://du0sduoql7m57" path="res://assets/sounds/sfx/blopblop4.wav" id="72_1bhgm"]
+[ext_resource type="Texture2D" uid="uid://b2kbd5g6dmwbp" path="res://assets/mano.png" id="78_ah3r7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n2lb5"]
 animations = [{
@@ -271,6 +272,43 @@ stream_20/stream = ExtResource("63_n5rw5")
 stream_21/stream = ExtResource("64_x8hiu")
 stream_22/stream = ExtResource("65_oy5xv")
 
+[sub_resource type="Animation" id="Animation_ypu46"]
+resource_name = "wipe"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1360, 307), Vector2(-266, 307)]
+}
+
+[sub_resource type="Animation" id="Animation_fh21s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1360, 307)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ouyfw"]
+_data = {
+"RESET": SubResource("Animation_fh21s"),
+"wipe": SubResource("Animation_ypu46")
+}
+
 [node name="world" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_fmycn")
@@ -398,6 +436,16 @@ stream = SubResource("AudioStreamRandomizer_xwfd7")
 stream = SubResource("AudioStreamRandomizer_akurb")
 max_polyphony = 3
 
+[node name="wiper" type="Sprite2D" parent="."]
+position = Vector2(1360, 307)
+scale = Vector2(0.613426, 0.613426)
+texture = ExtResource("78_ah3r7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="wiper"]
+libraries = {
+"": SubResource("AnimationLibrary_ouyfw")
+}
+
 [connection signal="timeout" from="blob_timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="outer_bubble/AnimatedSprite2D" to="outer_bubble" method="_on_animation_finished"]
 [connection signal="timeout" from="enemy_timer" to="." method="_on_enemy_timer_timeout"]
@@ -405,3 +453,4 @@ max_polyphony = 3
 [connection signal="pressed" from="pause_menu/restart" to="pause_menu" method="_on_restart_pressed"]
 [connection signal="pressed" from="pause_menu/continue" to="pause_menu" method="_on_continue_pressed"]
 [connection signal="pressed" from="pause_menu/quit" to="pause_menu" method="_on_quit_pressed"]
+[connection signal="animation_finished" from="wiper/AnimationPlayer" to="." method="_on_wipe_animation_finished"]

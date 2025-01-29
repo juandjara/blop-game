@@ -26,9 +26,13 @@ func add_blop():
 
 func reset_blops():
 	if current_blops <= 1:
-		# game over
-		get_tree().reload_current_scene()
+		gameover()
 	current_blops = 1
+
+
+func gameover():
+	$/root/world/wiper/AnimationPlayer.play("wipe")
+
 
 func _on_timer_timeout() -> void:
 	var rect = get_viewport_rect().size
@@ -77,3 +81,6 @@ func _on_enemy_timer_timeout() -> void:
 	
 	add_child(bubble)
 	
+
+func _on_wipe_animation_finished(anim_name: StringName) -> void:
+	get_tree().reload_current_scene()
