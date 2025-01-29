@@ -25,7 +25,9 @@ window/stretch/mode="canvas_items"
 
 player=""
 outer_bubble=""
+blop=""
 
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.750777, 0.563998, 0.501772, 1)

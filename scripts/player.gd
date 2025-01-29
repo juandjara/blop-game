@@ -5,6 +5,11 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 
 @onready var particles: CPUParticles2D = $CPUParticles2D
+@onready var _animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	_animated_sprite.play('idle')
+
 
 func grow():
 	# particles.amount += 5

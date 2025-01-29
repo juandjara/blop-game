@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://u6hgkwx6kfqr"]
+[gd_scene load_steps=6 format=3 uid="uid://u6hgkwx6kfqr"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tdtfx"]
+[ext_resource type="SpriteFrames" uid="uid://d4bfo4usp2cq6" path="res://assets/small_blop_sprites.tres" id="2_gqrjb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y7q28"]
 radius = 6.0
@@ -35,7 +36,7 @@ damping_max = 60.0
 scale_amount_min = 10.0
 scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_w18yo")
-color = Color(0.568627, 0.380392, 0.239216, 1)
+color = Color(0.255072, 0.203308, 0.521819, 1)
 hue_variation_min = 1.0
 hue_variation_max = 1.0
 
@@ -53,3 +54,9 @@ shape = SubResource("SeparationRayShape2D_5vlda")
 [node name="ray_right" type="CollisionShape2D" parent="."]
 rotation = 4.71239
 shape = SubResource("SeparationRayShape2D_5vlda")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -2)
+scale = Vector2(0.15, 0.15)
+sprite_frames = ExtResource("2_gqrjb")
+animation = &"idle"
