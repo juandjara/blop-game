@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bibnawfhr7fix"]
+[gd_scene load_steps=84 format=3 uid="uid://bibnawfhr7fix"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_fmycn"]
 [ext_resource type="PackedScene" uid="uid://u6hgkwx6kfqr" path="res://scenes/player.tscn" id="2_drkp4"]
@@ -49,6 +49,34 @@
 [ext_resource type="Texture2D" uid="uid://d0pbb5tefynvo" path="res://assets/menus/continue_pausa.png" id="46_i2tpe"]
 [ext_resource type="Texture2D" uid="uid://3oi4i1uqxau5" path="res://assets/menus/quit_pausa.png" id="47_g56ru"]
 [ext_resource type="AudioStream" uid="uid://cln7mvio57tqi" path="res://assets/sounds/music/main.wav" id="49_u31gc"]
+[ext_resource type="AudioStream" uid="uid://cxrvn2yf7t6s" path="res://assets/sounds/sfx/wawawa4.wav" id="50_ah311"]
+[ext_resource type="AudioStream" uid="uid://0ljgxy8aipfy" path="res://assets/sounds/sfx/pop1.wav" id="50_euwlx"]
+[ext_resource type="AudioStream" uid="uid://u14i5cavh1hk" path="res://assets/sounds/sfx/wawawa3.wav" id="51_jtmtr"]
+[ext_resource type="AudioStream" uid="uid://dbe2npi0cmcht" path="res://assets/sounds/sfx/pop2.wav" id="51_rdlvy"]
+[ext_resource type="AudioStream" uid="uid://b5ioftjahvxl5" path="res://assets/sounds/sfx/blopblop3.wav" id="52_c1pg4"]
+[ext_resource type="AudioStream" uid="uid://hu4xfkduehro" path="res://assets/sounds/sfx/pop3.wav" id="52_twmg5"]
+[ext_resource type="AudioStream" uid="uid://b5836vf0vhq8g" path="res://assets/sounds/sfx/pop4.wav" id="53_2bgjf"]
+[ext_resource type="AudioStream" uid="uid://bft4d3o4hdwn7" path="res://assets/sounds/sfx/blopblop2.wav" id="53_x5tee"]
+[ext_resource type="AudioStream" uid="uid://di28wxeuycrav" path="res://assets/sounds/sfx/pop5.wav" id="54_clflm"]
+[ext_resource type="AudioStream" uid="uid://coov35qc4bolo" path="res://assets/sounds/sfx/blopblop1.wav" id="54_syswv"]
+[ext_resource type="AudioStream" uid="uid://blh6qetvrvb" path="res://assets/sounds/sfx/blooP1.wav" id="55_jsyt8"]
+[ext_resource type="AudioStream" uid="uid://d2u01e0ls2lfc" path="res://assets/sounds/sfx/bllllooop3.wav" id="56_6pfv3"]
+[ext_resource type="AudioStream" uid="uid://bvywvnao06x60" path="res://assets/sounds/sfx/bllllooop2.wav" id="57_lra3n"]
+[ext_resource type="AudioStream" uid="uid://0o1p13r27fr4" path="res://assets/sounds/sfx/bllllooop1.wav" id="58_pa6aq"]
+[ext_resource type="AudioStream" uid="uid://cbsyp2wi6gtjd" path="res://assets/sounds/sfx/blip6.wav" id="59_cftwx"]
+[ext_resource type="AudioStream" uid="uid://dxmx85sfbhsm8" path="res://assets/sounds/sfx/blip5.wav" id="60_1bedl"]
+[ext_resource type="AudioStream" uid="uid://bk02luhua4is3" path="res://assets/sounds/sfx/blip4.wav" id="61_4haco"]
+[ext_resource type="AudioStream" uid="uid://bc8x6qrx0qs24" path="res://assets/sounds/sfx/wawawa2.wav" id="62_vtlhq"]
+[ext_resource type="AudioStream" uid="uid://brc7kvsb32id6" path="res://assets/sounds/sfx/blip1.wav" id="63_n5rw5"]
+[ext_resource type="AudioStream" uid="uid://d0bpmkfqk1gxi" path="res://assets/sounds/sfx/blip2.wav" id="64_x8hiu"]
+[ext_resource type="AudioStream" uid="uid://dsc4qaowxptwu" path="res://assets/sounds/sfx/blip3.wav" id="65_oy5xv"]
+[ext_resource type="AudioStream" uid="uid://vm4fjbrwpetw" path="res://assets/sounds/sfx/wawawa1.wav" id="66_jmml7"]
+[ext_resource type="AudioStream" uid="uid://h5426pohc4i0" path="res://assets/sounds/sfx/prrr5.wav" id="67_op53l"]
+[ext_resource type="AudioStream" uid="uid://htjhtimwjjps" path="res://assets/sounds/sfx/prrr4.wav" id="68_4y8aa"]
+[ext_resource type="AudioStream" uid="uid://mn7hkwdbyl12" path="res://assets/sounds/sfx/prrr3.wav" id="69_wlrd1"]
+[ext_resource type="AudioStream" uid="uid://bj0n78a73rxbl" path="res://assets/sounds/sfx/prrr2.wav" id="70_k6nq2"]
+[ext_resource type="AudioStream" uid="uid://b34yaen51en58" path="res://assets/sounds/sfx/prrr1.wav" id="71_57ewi"]
+[ext_resource type="AudioStream" uid="uid://du0sduoql7m57" path="res://assets/sounds/sfx/blopblop4.wav" id="72_1bhgm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n2lb5"]
 animations = [{
@@ -208,6 +236,41 @@ _data = {
 "fadeout": SubResource("Animation_6swrm")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xwfd7"]
+streams_count = 5
+stream_0/stream = ExtResource("50_euwlx")
+stream_1/stream = ExtResource("51_rdlvy")
+stream_2/stream = ExtResource("52_twmg5")
+stream_3/stream = ExtResource("53_2bgjf")
+stream_4/stream = ExtResource("54_clflm")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_akurb"]
+playback_mode = 1
+streams_count = 23
+stream_0/stream = ExtResource("50_ah311")
+stream_1/stream = ExtResource("51_jtmtr")
+stream_2/stream = ExtResource("62_vtlhq")
+stream_3/stream = ExtResource("66_jmml7")
+stream_4/stream = ExtResource("67_op53l")
+stream_5/stream = ExtResource("68_4y8aa")
+stream_6/stream = ExtResource("69_wlrd1")
+stream_7/stream = ExtResource("70_k6nq2")
+stream_8/stream = ExtResource("71_57ewi")
+stream_9/stream = ExtResource("72_1bhgm")
+stream_10/stream = ExtResource("52_c1pg4")
+stream_11/stream = ExtResource("53_x5tee")
+stream_12/stream = ExtResource("54_syswv")
+stream_13/stream = ExtResource("55_jsyt8")
+stream_14/stream = ExtResource("56_6pfv3")
+stream_15/stream = ExtResource("57_lra3n")
+stream_16/stream = ExtResource("58_pa6aq")
+stream_17/stream = ExtResource("59_cftwx")
+stream_18/stream = ExtResource("60_1bedl")
+stream_19/stream = ExtResource("61_4haco")
+stream_20/stream = ExtResource("63_n5rw5")
+stream_21/stream = ExtResource("64_x8hiu")
+stream_22/stream = ExtResource("65_oy5xv")
+
 [node name="world" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_fmycn")
@@ -324,9 +387,16 @@ texture_normal = ExtResource("47_g56ru")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="music_player" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("49_u31gc")
 autoplay = true
+
+[node name="sfx_pop_player" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_xwfd7")
+
+[node name="sfx_blop_player" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_akurb")
+max_polyphony = 3
 
 [connection signal="timeout" from="blob_timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="outer_bubble/AnimatedSprite2D" to="outer_bubble" method="_on_animation_finished"]

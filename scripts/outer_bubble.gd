@@ -8,6 +8,7 @@ func _ready() -> void:
 	_animated_sprite.play('idle')
 
 func explode():
+	$/root/world/sfx_pop_player.play()
 	_animated_sprite.play('explode')
 	_collision_polygon.disabled = true
 
