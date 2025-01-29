@@ -17,5 +17,5 @@ func _on_body_entered(body: Node2D) -> void:
 		body.grow()
 		$/root/world.add_blop()
 		if $/root/world.win_condition:
-			body.change_color()
+			body.set_win_color()
 	queue_free()
