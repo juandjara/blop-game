@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
 
 @onready var particles: CPUParticles2D = $CPUParticles2D
 @onready var _animated_sprite: AnimatedSprite2D = $AnimatedSprite2D

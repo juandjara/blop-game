@@ -50,14 +50,30 @@ func _on_enemy_timer_timeout() -> void:
 	var rect = get_viewport_rect().size
 	var half = Vector2(rect.x / 2, rect.y / 2)
 	var angle = randf_range(0, PI * 2)
+	var extra_angle_choice = randi_range(0, 2)
+	
+	var anim_key = "straight"
+	var inverted = false
+	var extra_angle = 0
+	if extra_angle_choice != 0:
+		anim_key = 'sideways'
+	if extra_angle_choice == 1:
+		extra_angle += deg_to_rad(30)
+	if extra_angle_choice == 2:
+		extra_angle -= deg_to_rad(30)
+		inverted = true
+	
 	var pos = Vector2.from_angle(angle) * max_spawn_distance
 	
 	var bubble: Area2D = small_bubble_scene.instantiate()
 	bubble.global_position.x = pos.x + half.x
 	bubble.global_position.y = pos.y + half.y
-	bubble.anim_key = "straight"
+	bubble.anim_key = anim_key
+	bubble.inverted = inverted
 	bubble.rotate(angle - (PI * 0.5))
-	bubble.direction = (pos * -1).normalized()
+	
+	var direction = Vector2.from_angle(angle + extra_angle)
+	bubble.direction = (direction * -1).normalized()
 	
 	add_child(bubble)
 	
