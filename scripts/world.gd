@@ -3,7 +3,21 @@ extends Node2D
 var small_bubble_scene = preload("res://scenes/small_bubble.tscn")
 var blop_scene = preload("res://scenes/small_blop.tscn")
 
+var win_condition = false
+var current_blops = 1
+@export var blops_needed = 10
 @export var max_spawn_distance: float = 320
+
+func add_blop():
+	current_blops += 1
+	if current_blops >= blops_needed:
+		win_condition = true
+
+func reset_blops():
+	if current_blops <= 1:
+		# game over
+		get_tree().reload_current_scene()
+	current_blops = 1
 
 func _on_timer_timeout() -> void:
 	var rect = get_viewport_rect().size
@@ -11,7 +25,7 @@ func _on_timer_timeout() -> void:
 
 	var margin = 25
 	var distance = randi_range(margin, max_spawn_distance - margin)
-	var angle = randi_range(0, PI * 2)
+	var angle = randf_range(0, PI * 2)
 	var pos = Vector2.from_angle(angle) * distance
 	
 	var blop: Area2D = blop_scene.instantiate()
@@ -24,7 +38,7 @@ func _on_timer_timeout() -> void:
 func _on_enemy_timer_timeout() -> void:
 	var rect = get_viewport_rect().size
 	var half = Vector2(rect.x / 2, rect.y / 2)
-	var angle = randi_range(0, PI * 2)
+	var angle = randf_range(0, PI * 2)
 	var pos = Vector2.from_angle(angle) * max_spawn_distance
 	
 	var bubble: Area2D = small_bubble_scene.instantiate()

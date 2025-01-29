@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bibnawfhr7fix"]
+[gd_scene load_steps=46 format=3 uid="uid://bibnawfhr7fix"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_fmycn"]
 [ext_resource type="PackedScene" uid="uid://u6hgkwx6kfqr" path="res://scenes/player.tscn" id="2_drkp4"]
@@ -7,21 +7,42 @@
 [ext_resource type="Texture2D" uid="uid://lsqlmqkwr0v4" path="res://assets/bubble_appear/bbcontorno-0002.png" id="4_v4qt8"]
 [ext_resource type="Texture2D" uid="uid://c77cp2aeg8kag" path="res://assets/bubble_appear/bbcontorno-0003.png" id="5_ycyyh"]
 [ext_resource type="Texture2D" uid="uid://cgbyskpp26aen" path="res://assets/bubble_appear/bbcontorno-0004.png" id="6_07ucd"]
+[ext_resource type="Texture2D" uid="uid://cm6rgssyxyrb6" path="res://assets/bubble_explode/Burbujae-0001.png" id="6_to2xg"]
 [ext_resource type="Texture2D" uid="uid://cvhx8rq1rnnrl" path="res://assets/bubble_appear/bbcontorno-0005.png" id="7_aekpe"]
+[ext_resource type="Texture2D" uid="uid://bungndkiim8ch" path="res://assets/bubble_explode/Burbujae-0002.png" id="7_hr7qp"]
+[ext_resource type="Texture2D" uid="uid://l174sffare8k" path="res://assets/bubble_explode/Burbujae-0003.png" id="8_6p36f"]
 [ext_resource type="Texture2D" uid="uid://cmumaf4ceouhp" path="res://assets/bubble_appear/bbcontorno-0006.png" id="8_wrgm2"]
 [ext_resource type="Texture2D" uid="uid://dficicwe01oqg" path="res://assets/bubble_appear/bbcontorno-0007.png" id="9_4pycs"]
+[ext_resource type="Texture2D" uid="uid://blbxmj7jhleqo" path="res://assets/bubble_explode/Burbujae-0004.png" id="9_xueae"]
 [ext_resource type="Texture2D" uid="uid://ppr766xqxfqm" path="res://assets/bubble_appear/bbcontorno-0008.png" id="10_7tijs"]
+[ext_resource type="Texture2D" uid="uid://dsspshbjgcxvk" path="res://assets/bubble_explode/Burbujae-0005.png" id="10_psr0k"]
+[ext_resource type="Texture2D" uid="uid://cautuwltgjp3d" path="res://assets/bubble_explode/Burbujae-0006.png" id="11_rfyrs"]
 [ext_resource type="Texture2D" uid="uid://dil8uckevex74" path="res://assets/bubble_appear/bbcontorno-0009.png" id="11_slcnh"]
+[ext_resource type="Texture2D" uid="uid://ik5ipiut762h" path="res://assets/bubble_explode/Burbujae-0007.png" id="12_08gn4"]
 [ext_resource type="Texture2D" uid="uid://waxfnvvw4bpm" path="res://assets/bubble_appear/bbcontorno-0010.png" id="12_tfssa"]
+[ext_resource type="Texture2D" uid="uid://clgnes6l074o1" path="res://assets/bubble_explode/Burbujae-0008.png" id="13_ggb80"]
 [ext_resource type="Texture2D" uid="uid://eb1ts5bijqei" path="res://assets/bubble_appear/bbcontorno-0011.png" id="13_rqg3v"]
+[ext_resource type="Texture2D" uid="uid://dbhctae8x6jo6" path="res://assets/bubble_explode/Burbujae-0009.png" id="14_5hwvo"]
 [ext_resource type="Texture2D" uid="uid://d1ud716toqc18" path="res://assets/bubble_appear/bbcontorno-0012.png" id="14_e04wv"]
+[ext_resource type="Texture2D" uid="uid://dqmfujlg58ef8" path="res://assets/bubble_explode/Burbujae-0010.png" id="15_aq0o6"]
 [ext_resource type="Texture2D" uid="uid://cfcwtbgddx7yl" path="res://assets/bubble_appear/bbcontorno-0013.png" id="15_qhhfu"]
 [ext_resource type="Texture2D" uid="uid://cs48iwrrde6h8" path="res://assets/bubble_appear/bbcontorno-0014.png" id="16_7y0q7"]
+[ext_resource type="Texture2D" uid="uid://cbhtk0ph8ryhu" path="res://assets/bubble_explode/Burbujae-0011.png" id="16_ugnif"]
 [ext_resource type="Texture2D" uid="uid://00agi3adtvob" path="res://assets/bubble_appear/bbcontorno-0015.png" id="17_5gkb1"]
+[ext_resource type="Texture2D" uid="uid://deyl0n1qpl4bc" path="res://assets/bubble_explode/Burbujae-0012.png" id="17_7ap7v"]
+[ext_resource type="Texture2D" uid="uid://c1qr8p8irnfk5" path="res://assets/bubble_explode/Burbujae-0013.png" id="18_3ycmi"]
 [ext_resource type="Texture2D" uid="uid://mxy8vjm0a7g2" path="res://assets/bubble_appear/bbcontorno-0016.png" id="18_i1ym2"]
+[ext_resource type="Texture2D" uid="uid://curgtphgdwmr5" path="res://assets/bubble_explode/Burbujae-0014.png" id="19_4ihhp"]
 [ext_resource type="Texture2D" uid="uid://buqun34l38bga" path="res://assets/Float_Tile.png" id="20_bl3mu"]
+[ext_resource type="Texture2D" uid="uid://dei4an3i8ssp2" path="res://assets/bubble_explode/Burbujae-0015.png" id="20_itj7o"]
 [ext_resource type="Texture2D" uid="uid://bpb8hq1knn7sr" path="res://assets/Normal_Tile.png" id="21_ixvcq"]
+[ext_resource type="Texture2D" uid="uid://djv8f2quqyglh" path="res://assets/bubble_explode/Burbujae-0016.png" id="21_x8hqm"]
+[ext_resource type="Texture2D" uid="uid://dmvevsk0g0146" path="res://assets/bubble_explode/Burbujae-0017.png" id="22_ahr2n"]
 [ext_resource type="Texture2D" uid="uid://r4mghw4mvkov" path="res://assets/Fondo_concept_2.png" id="22_fe12b"]
+[ext_resource type="Texture2D" uid="uid://vbtf5yivaxha" path="res://assets/bubble_explode/Burbujae-0018.png" id="23_h5c5q"]
+[ext_resource type="Texture2D" uid="uid://clmsrel3kk5px" path="res://assets/bubble_explode/Burbujae-0019.png" id="24_kxwpw"]
+[ext_resource type="Texture2D" uid="uid://bn4311x6iu0wp" path="res://assets/bubble_explode/Burbujae-0020.png" id="25_cxstx"]
+[ext_resource type="Script" path="res://scripts/shadow.gd" id="43_4sara"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vw6hj"]
 diffuse_texture = ExtResource("20_bl3mu")
@@ -29,6 +50,71 @@ normal_texture = ExtResource("21_ixvcq")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n2lb5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_to2xg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hr7qp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6p36f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xueae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_psr0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rfyrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_08gn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ggb80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5hwvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_aq0o6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ugnif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7ap7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3ycmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4ihhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_itj7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_x8hqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ahr2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_h5c5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_kxwpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cxstx")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_jay1e")
@@ -113,7 +199,7 @@ script = ExtResource("3_qi6na")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="outer_bubble"]
 scale = Vector2(0.45, 0.45)
 sprite_frames = SubResource("SpriteFrames_n2lb5")
-animation = &"idle"
+animation = &"explode"
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="outer_bubble"]
@@ -125,10 +211,11 @@ metadata/_edit_lock_ = true
 wait_time = 1.5
 autostart = true
 
-[node name="fondo_sombra" type="Sprite2D" parent="."]
+[node name="shadow" type="Sprite2D" parent="."]
 position = Vector2(429, 320)
 scale = Vector2(0.667839, 0.667839)
 texture = ExtResource("22_fe12b")
+script = ExtResource("43_4sara")
 
 [connection signal="timeout" from="blob_timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="enemy_timer" to="." method="_on_enemy_timer_timeout"]

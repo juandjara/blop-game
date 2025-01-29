@@ -15,4 +15,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if (body.is_in_group("player")):
 		body.grow()
+		$/root/world.add_blop()
+		if $/root/world.win_condition:
+			body.change_color()
 	queue_free()
