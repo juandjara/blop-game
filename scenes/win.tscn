@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhminjpvhuw6q"]
+
+[ext_resource type="FontFile" uid="uid://y10a72uay605" path="res://assets/run.ttf" id="1_1lwrv"]
+[ext_resource type="Script" path="res://scripts/win.gd" id="1_6sc1l"]
+
+[node name="win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6sc1l")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 860.0
+offset_bottom = 644.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 242.0
+offset_right = 779.0
+offset_bottom = 372.0
+theme_override_fonts/font = ExtResource("1_1lwrv")
+theme_override_font_sizes/font_size = 64
+text = "we are stronger together"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 372.0
+offset_right = 503.0
+offset_bottom = 395.0
+text = "Thanks for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 859.0
+offset_bottom = 639.0
+action_mode = 0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
