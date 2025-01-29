@@ -6,9 +6,6 @@ const SPEED = 200.0
 @onready var _animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation: AnimationPlayer = $AnimationPlayer
 
-# var win_color = Color('#9b64c6')
-var is_changing_color = false
-
 func _ready() -> void:
 	_animated_sprite.play('idle')
 
