@@ -7,7 +7,7 @@ var is_moving = false
 @onready var _animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
 
-const SPEED = 5
+@export var SPEED = 4
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
